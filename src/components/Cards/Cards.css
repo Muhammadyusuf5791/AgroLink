@@ -1,0 +1,155 @@
+.cards {
+  width: 100%;
+  height: auto;
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f3eb;
+  gap: 30px;
+}
+
+.cards .card {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; /* scroll ishlasin */
+  padding-bottom: 10px;
+  -ms-overflow-style: none; /* IE va Edge uchun */
+  scrollbar-width: none; /* Firefox uchun */
+}
+
+.cards .card::-webkit-scrollbar {
+  display: none; /* Chrome, Safari uchun */
+}
+
+.cards .card .content {
+  position: relative;
+  flex-shrink: 0;
+  width: 235px;
+  height: 390px;
+  padding: 50px 15px 0 15px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.cards .card .content .product-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards .card .content img {
+  width: 100%;
+  height: 180px;
+}
+
+.cards .card .content .product-name h1 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-family: serif;
+}
+
+.cards .card .content .like-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.cards .logo h1 {
+  font-size: 43px;
+}
+
+.cards .card .content .price h3 {
+  text-decoration: line-through;
+  color: #c4c3c3;
+  font-size: 18px;
+}
+
+.cards .card .content .price h2 {
+  font-size: 20px;
+  color: #03bc03;
+}
+
+.cards .card .content .price {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.cards .card .content .product-name h1 .icon {
+  color: gold;
+}
+
+.cards .card .content .hoverContent {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 0;
+}
+
+/* Hover bo‘lganda */
+.cards .card .content .hoverContent.show {
+  max-height: 80px;
+  opacity: 1;
+  margin: 5px 0 15px 0;
+}
+
+.cards .card .content .hoverContent .icon {
+  font-size: 23px;
+}
+
+.cards .card .content .hoverContent button {
+  width: 70%;
+  position: relative;
+  border-radius: 30px;
+  background-color: #03bc03;
+  display: flex;
+  justify-content: center;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cards .card .content .hoverContent button .btn-text {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cards .card .content .hoverContent button .basket-icon {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 18px;
+}
+
+/* Hover holati */
+.cards .card .content .hoverContent button:hover .btn-text {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.cards .card .content .hoverContent button:hover .basket-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .cards .logo h1{
+    font-size: 30px;
+  }
+}
