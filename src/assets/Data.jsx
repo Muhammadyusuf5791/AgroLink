@@ -8,6 +8,8 @@ import hoverKaram from '../assets/hoverKaram.jpg'
 import hoverSabzi from '../assets/hoverSabzi.jpg'
 import hoverPiyoz from '../assets/hoverPiyoz.jpg'
 import hoverBaqlajon from '../assets/hoverBaqlajon.jpg'
+import hoverQizilcha from '../assets/hoverQizilcha.jpg'
+import Qizilcha from '../assets/Qizilcha.png'
 
 const Data = [
     {
@@ -56,6 +58,15 @@ const Data = [
                 stars: 5,
                 price: "9,000 so'm",
                 oldPrice: "/ 10,000 so'm"
+            },
+            {
+                id: 6,
+                image: Qizilcha,
+                hoverImage: hoverQizilcha,
+                title: 'Qizilcha',
+                stars: 5,
+                price: "3,000 so'm",
+                oldPrice: "/ 5,000 so'm"
             },
         ]
     }
