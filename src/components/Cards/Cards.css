@@ -1,32 +1,36 @@
 .cards {
   width: 100%;
   height: auto;
-  padding: 40px 15px;
+  padding: 40px 70px;
   display: flex;
   flex-direction: column;
   background-color: #f7f3eb;
   gap: 30px;
 }
 
-.cards .card {
-  gap: 15px;
+.cards .logo {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto; /* scroll ishlasin */
-  padding-bottom: 10px;
-  -ms-overflow-style: none; /* IE va Edge uchun */
-  scrollbar-width: none; /* Firefox uchun */
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.cards .card::-webkit-scrollbar {
-  display: none; /* Chrome, Safari uchun */
+.cards .logo h1 {
+  font-size: 43px;
 }
 
-.cards .card .content {
+.swiper-container {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.mySwiper {
+  width: 100%;
+}
+
+/* Har bir card */
+.cards .content {
   position: relative;
-  flex-shrink: 0;
-  width: 235px;
+  width: 250px;
   height: 390px;
   padding: 50px 15px 0 15px;
   background-color: white;
@@ -38,56 +42,54 @@
   cursor: pointer;
 }
 
-.cards .card .content .product-name {
+.cards .content .like-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.cards .content img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.cards .content .product-name {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.cards .card .content img {
-  width: 100%;
-  height: 180px;
-}
-
-.cards .card .content .product-name h1 {
+.cards .content .product-name h1 {
   font-size: 20px;
   display: flex;
   align-items: center;
   font-family: serif;
 }
 
-.cards .card .content .like-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+.cards .content .product-name h1 .icon {
+  color: gold;
 }
 
-.cards .logo h1 {
-  font-size: 43px;
-}
-
-.cards .card .content .price h3 {
-  text-decoration: line-through;
-  color: #c4c3c3;
-  font-size: 18px;
-}
-
-.cards .card .content .price h2 {
-  font-size: 20px;
-  color: #03bc03;
-}
-
-.cards .card .content .price {
+.cards .content .price {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
 }
 
-.cards .card .content .product-name h1 .icon {
-  color: gold;
+.cards .content .price h2 {
+  font-size: 20px;
+  color: #03bc03;
 }
 
-.cards .card .content .hoverContent {
+.cards .content .price h3 {
+  text-decoration: line-through;
+  color: #c4c3c3;
+  font-size: 18px;
+}
+
+/* HoverContent */
+.cards .content .hoverContent {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -99,18 +101,17 @@
   margin-top: 0;
 }
 
-/* Hover bo‘lganda */
-.cards .card .content .hoverContent.show {
+.cards .content .hoverContent.show {
   max-height: 80px;
   opacity: 1;
   margin: 5px 0 15px 0;
 }
 
-.cards .card .content .hoverContent .icon {
+.cards .content .hoverContent .icon {
   font-size: 23px;
 }
 
-.cards .card .content .hoverContent button {
+.cards .content .hoverContent button {
   width: 70%;
   position: relative;
   border-radius: 30px;
@@ -124,12 +125,12 @@
   cursor: pointer;
 }
 
-.cards .card .content .hoverContent button .btn-text {
+.cards .content .hoverContent button .btn-text {
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.cards .card .content .hoverContent button .basket-icon {
+.cards .content .hoverContent button .basket-icon {
   position: absolute;
   opacity: 0;
   transform: translateY(30px);
@@ -137,19 +138,19 @@
   font-size: 18px;
 }
 
-/* Hover holati */
-.cards .card .content .hoverContent button:hover .btn-text {
+.cards .content .hoverContent button:hover .btn-text {
   opacity: 0;
   transform: translateY(-20px);
 }
 
-.cards .card .content .hoverContent button:hover .basket-icon {
+.cards .content .hoverContent button:hover .basket-icon {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Responsiv */
 @media (max-width: 600px) {
-  .cards .logo h1{
-    font-size: 30px;
+  .cards .logo h1 {
+    font-size: 25px;
   }
 }
